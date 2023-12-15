@@ -1,0 +1,86 @@
+{% extends "index.html" %}
+{% block body %}
+{%load static%}
+<style>
+    body {
+        background-color: purple;
+        margin: 0px;
+        padding: 0px;
+      }
+      .text{
+          width: 100vw;
+          background-color: bisque;
+          height: 300px;
+          
+      
+      }
+      .sign{
+          width: 580px;
+          height: 400px;
+          background-color: white;
+          border-radius: 224px;
+          margin: 50px auto;
+       }
+      
+      .button {
+        background-color: red;
+        width: 440px;
+        
+        color: white;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        
+        font-size: 30px;
+        margin:0;
+        cursor: pointer;
+      }
+      .white_space{
+          width: 100px;
+      }
+      .buttom1{
+          background-color: white; 
+          width: 440px;
+          height: 250px;
+          margin: 0px auto;
+          margin-bottom: 50px;
+         
+      }
+      .video{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+      }
+      .videos,.signs{
+        border:1px black solid
+        ;
+        height: inherit;
+      }
+      .gridclass
+      {
+          display: grid;
+          grid-template-columns: 1fr 1fr ; 
+          justify-content: center;
+          margin-top: 100px;
+      
+      }
+</style>
+</head>
+<body>
+
+
+<div class="main"><div class="text"><p style="margin:0 50% ">Select your language</p></div>
+<div class="sign"></div>
+<div class="button_set">
+    <div class="gridclass">
+    <a href='{% url 'submit' %}'><div class="buttom1"><button class="button ">English</button><div class="video"><div class="videos">text</div><div class="signs">text</div></div></div></a>
+    <a href='{% url 'submit' %}'><div class="buttom1"><button class="button ">Kannada</button><div class="video"><div class="videos">text</div><div class="signs">text</div></div></div></a>
+    <a href='{% url 'submit' %}'><div class="buttom1"><button class="button ">Malyalam</button><div class="video"><div class="videos">text</div><div class="signs">text</div></div></div></a>
+    <div class="buttom1"><a href="{% url 'submit' %}"></a><button class="button ">Hindi</button><div class="video"><div class="videos">text</div><div class="signs">text</div></div></div>
+    <a href="{% url 'submit' %}"><div class="buttom1"><button class="button ">Telugu</button><div class="video"><div class="videos">text</div><div class="signs">text</div></div></div></a>
+
+   </div>
+   <div class="buttom1"><button class="button ">CONTACT</button><div class="video"><div class="videos">text</div><div class="signs">text</div></div></div>
+</div>
+</div>
+</body>
+{% endblock body%}

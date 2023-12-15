@@ -1,0 +1,99 @@
+
+{% extends "index.html" %}
+{% block body %}
+    <style>
+        body {
+            background-color: purple;
+            margin: 0px;
+            padding: 0px;
+          }
+        input,textarea{
+            width:600px;
+            height:100px;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            margin-top: 100px;
+            font-size: 50px;
+        }
+        .submit{
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width:100px;
+            height:100px;
+            
+        }
+        .deopsiting{
+            display: block;
+        }
+        .popup{
+            display:none;
+            animation: entry 1 4s;
+            
+        }
+        @keyframes entry{
+            0%{
+                opacity: 0;
+        }
+            50%{opacity: 50;}
+            100%{opacity: 100;}
+        }
+        .fingerprint{
+            display: grid;
+            grid-template-columns:2fr 1fr ;
+            border: black 1px solid ;
+            align-self: center;
+            justify-self: center;
+          
+        }
+        .deposit{
+            display: grid;
+            grid-template-columns: 1fr ;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            
+        }
+        .text1{
+            font-size: 100px;
+            font-weight: bold;
+            text-align: center;
+
+        }
+        .video{
+            width: 100%;
+            border: black 1px solid;
+        }
+        
+
+    </style>
+
+<body>
+    <script>
+        window.onload = function() {
+            document.querySelector('.submit').addEventListener('click', function(event) {
+                event.preventDefault(); // Prevents the form from submitting
+                document.querySelector('.popup').style.display = 'block'; // Shows the popup
+                document.querySelector('.deopsiting').style.display = 'none'; // Hides the form
+            });
+        };
+        </script>
+    <div class="deposit">
+        <form class="deopsiting">
+        <input type="number" class="amountOf">
+        <button type="submit" class="submit">SUBMIT</button></form>
+        <div class="popup">
+            <div class="fingerprint">
+                <div class="info">
+                    <p class="text1">Finger To Unlock</p>
+                </div>
+                <div class="video"></div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock body %}

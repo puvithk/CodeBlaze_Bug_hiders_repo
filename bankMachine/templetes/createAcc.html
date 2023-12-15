@@ -1,0 +1,18 @@
+
+{% extends "index.html" %}
+{% block body %}
+<style>
+body{
+    background-color:purple;
+    font-family:Arial,Helvet;
+    height:100vh;
+}
+.quiz{
+    height:100vh;
+}
+</style>
+<form method="POST" class="quiz" action="{% url 'createAcc' %}" enctype="multipart/form-data">
+{% csrf_token %}
+    {{forms}}
+<button type="submit">Submit</button></forms>
+{% endblock body %}

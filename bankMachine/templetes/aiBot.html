@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+{% block body %}
+    <style>
+        body{
+            background: purple;
+        }
+        #chatbox {
+            width:100vw;
+            height: 800px;
+            border: 1px solid black;
+            overflow: auto;
+            font-size: xx-large;
+            
+        }
+        #userInput {
+            width: 100vw;
+            height:100px;
+            font-size: xx-large;
+            border: 1px solid black;
+            color: purple;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="chatbox"></div>
+    <input id="userInput" type="text" />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            var input = document.getElementById('userInput');
+            var message = input.value;
+            input.value = '';
+
+            var chatbox = document.getElementById('chatbox');
+            chatbox.innerHTML += '<p>You: ' + message + '</p>';
+
+            
+
+            var response = 'Hello, I am your AI chatbot.';  // This is a placeholder
+
+            chatbox.innerHTML += '<p>Bot: ' + response + '</p>';
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
+{% endblock body %}

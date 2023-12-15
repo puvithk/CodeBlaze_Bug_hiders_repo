@@ -1,0 +1,85 @@
+{% extends "index.html" %}
+{% block body %}
+<style>
+    body {
+        background-color: purple;
+        margin: 0px;
+        padding: 0px;
+      }
+      .text{
+          width: 100vw;
+          background-color: bisque;
+          height: 300px;
+          
+      
+      }
+      .sign{
+          width: 580px;
+          height: 400px;
+          background-color: white;
+          border-radius: 224px;
+          margin: 50px auto;
+       }
+      
+      .button {
+        background-color: red;
+        width: 440px;
+        
+        color: white;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        
+        font-size: 30px;
+        margin:0;
+        cursor: pointer;
+      }
+      .white_space{
+          width: 100px;
+      }
+      .buttom1{
+          background-color: white; 
+          width: 440px;
+          height: 250px;
+          margin: 0px auto;
+          margin-bottom: 50px;
+         
+      }
+      .video{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+      }
+      .gridclass
+      {
+          display: grid;
+          grid-template-columns: 1fr 1fr ; 
+          justify-content: center;
+          margin-top: 100px;
+      
+      }
+      .videos,.signs{
+        border:1px black solid;
+        height: 200px;
+        
+      }
+</style>
+</head>
+<body>
+
+
+<div class="main"><div class="text">{{all_user_detail.name}}</div>
+
+<div class="sign"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/main sign img.jpeg"></div>
+<div class="button_set">
+    <div class="gridclass">
+        <a href="{% url 'createAcc' %}"><div class="buttom1"><button class="button ">CREATE ACCOUNT</button><div class="video"><div class="videos"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/account cre.jpeg"></div><div class="signs"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/sign acc cre.png"></div></div></div></a>
+
+    <div class="buttom1"><a href="{% url 'createAcc' %}"></a><button class="button ">DEPOSIT</button><div class="video"><div class="videos"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/deposit.png"></div><div class="signs"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/depost img.jpeg"></div></div></div>
+    <a href="{% url 'Withdraw' %}"><div class="buttom1"><button class="button ">WITHDRAW</button><div class="video"><div class="videos"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/withdraw.jpeg"> </div><div class="signs"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/withdr anima.png"></div></div></div></a>
+    <div class="buttom1"><a href="/createAcc"></a><button class="button ">OTHER</button><div class="video"><div class="videos"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/other.png"></div><div class="signs">text</div></div></div>
+   </div>
+   <a href="{% url 'aiBot' %}"><div class="buttom1"><button class="button ">CONTACT</button><div class="video"><div class="videos"><img src="/CodeBlaze_bug_hiders/bankMachine/static/img/contatc.jpg"></div><div class="signs">text</div></div></a></div>
+</div>
+</div>
+</body>
+{% endblock body%}
